@@ -7,6 +7,7 @@ import { AuthModule } from './auth/auth.module';
 import { AssignmentsModule } from './assignments/assignments.module';
 import { ConfigModule } from '@nestjs/config';
 import { LoggerMiddleware } from './Middleware/logger.middleware';
+import { DbModule } from './db/db.module';
 
 @Module({
   imports: [
@@ -14,6 +15,7 @@ import { LoggerMiddleware } from './Middleware/logger.middleware';
     UsersModule,
     AuthModule,
     AssignmentsModule,
+    DbModule,
     ConfigModule.forRoot({ isGlobal: true })
   ],
   controllers: [AppController],
