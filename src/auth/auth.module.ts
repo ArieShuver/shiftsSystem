@@ -16,13 +16,13 @@ import { RolesGuard } from './roles.guard';
       global: true,
       useFactory: () => ({
         secret: process.env.JWT_SECRET,
-        signOptions: { expiresIn: '60s' },
+        signOptions: { expiresIn: '600s' },
       }),
     }),
   ],
   providers: [AuthService,
-    AuthGuard,          // מחייב התחברות
-    RolesGuard,         // מגביל לפי תפקידים
+    AuthGuard,         
+    RolesGuard,       
     {
       provide: APP_GUARD,
       useClass: AuthGuard,
